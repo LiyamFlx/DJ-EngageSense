@@ -1,3 +1,64 @@
 {
-  "template": "bolt-vite-react-ts"
+  // Template configuration
+  "template": "bolt-vite-react-ts",
+
+  // Version of the template
+  "version": "1.0.0",
+
+  // Project-specific settings
+  "settings": {
+    "optimize": true,
+    "minify": true,
+    "sourceMaps": true,
+    "env": {
+      "NODE_ENV": "development"
+    }
+  },
+
+  // Dependency management
+  "dependencies": {
+    "devDependencies": {
+      "typescript": "^4.5.4",
+      "eslint": "^7.32.0"
+    },
+    "peerDependencies": {
+      "react": "^17.0.2",
+      "react-dom": "^17.0.2"
+    }
+  },
+
+  // Build configurations
+  "build": {
+    "target": "esnext",
+    "outDir": "dist",
+    "assetsDir": "assets"
+  },
+
+  // Development server settings
+  "devServer": {
+    "port": 3000,
+    "open": true,
+    "proxy": {
+      "/api": {
+        "target": "http://localhost:5000",
+        "changeOrigin": true
+      }
+    }
+  },
+
+  // Linting and formatting
+  "linting": {
+    "enabled": true,
+    "rules": {
+      "semi": ["error", "always"],
+      "quotes": ["error", "double"]
+    }
+  },
+
+  // Testing configurations
+  "testing": {
+    "framework": "jest",
+    "coverage": true,
+    "collectCoverageFrom": ["src/**/*.ts", "src/**/*.tsx"]
+  }
 }
